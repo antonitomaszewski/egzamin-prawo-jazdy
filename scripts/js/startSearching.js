@@ -1,138 +1,134 @@
 import fetch from "node-fetch";
-import getToken from './getToken.js';
-import { takeReservation } from './take-reservation.js';
-import { sleep } from './sleep.js';
+import { getBearerToken } from './getToken.js';
+import { takeReservation } from './takeReservation.js';
+import https from 'https';
+import {constants} from 'crypto';
+import fs from 'fs';
 
-export const startSearching = async () => {
-    console.log("Retrieving authorization token...")
-    let bearer_token = ""
-    do {
-        bearer_token = await getToken()
-    } while(bearer_token == "")
-    console.clear();
+const createAgent = () => new https.Agent({
+    rejectUnauthorized: false,
+    secureOptions: constants.SSL_OP_ALLOW_BEAST,
+    ciphers: 'DEFAULT:!DH',
+});
 
-    let clearCount = 0;
-    let retryCount = 0;
-    while (true) {
-        try {
-            const response = await fetch(`https://info-car.pl/api/word/word-centers/exam-schedule`, {
-                method: "PUT",
-                body: JSON.stringify({
-                    category: "B",
-                    wordId: process.env.WORDID
-                }),
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": bearer_token
-                }
-            }).catch(err => { throw new Error(err); });
-      
-            if (response.status !== 200) {
-                retryCount++;
-                if (retryCount >= 5) {
-                    console.log("Too many tries to fetch...");
-                    process.exit();
-                }
+const fetchSchedule = async (bearerToken, agent) => {
+    const startDate = new Date(process.env.DATE_FROM);
+    const endDate = new Date(process.env.DATE_TO);
 
-                console.clear();
-                console.log("Retrieving new authorization token...");
-                console.log("\u0007");
-
-                bearer_token = ""
-                do {
-                    bearer_token = await getToken()
-                } while(bearer_token == "")
-                console.clear();
-                continue;
-            } else retryCount = 0;
-
-            const { schedule } = await response.json();
-
-            console.log("Looking for reservation...");
-
-            const DATE_FROM = process.env.DATE_FROM;
-            const DATE_TO = process.env.DATE_TO;
-
-            const strictedScheduledDates = schedule.scheduledDays.filter(date => { return ((new Date(date.day) >= new Date(DATE_FROM)) && (new Date(date.day) <= new Date(DATE_TO))) });
-
-            // Stricted schedules dates for practice exams
-            const strictedPractiseExams = strictedScheduledDates.filter(scheduledDate => { return scheduledDate.scheduledHours.some(scheduledHour => scheduledHour.practiceExams.length !== 0) });
-
-            if (strictedPractiseExams.length !== 0) {
-                console.clear();
-                for (let y = 0; y < strictedPractiseExams.length; y++) {
-                    let found = false;
-                    let smallestIndex;
-                    let scheduledHourIndex;
-
-                    console.log("\n");
-                    console.log("---------DATE---------");
-                    console.log(strictedPractiseExams[y].day);
-                    console.log("---------HOURS---------");
-                    for (const [i, hour] of strictedPractiseExams[y].scheduledHours.entries()) {
-                        if (hour.practiceExams.length !== 0) {
-                            console.log(`${hour.time} places: ${hour.practiceExams[0].places}`);
-                            const index = process.env.PREFERRED_HOURS.split(",").indexOf(hour.time.split(":")[0]);
-
-                            if (found === false) {
-                                if (index > -1) {
-                                    smallestIndex = index;
-                                    scheduledHourIndex = i;
-                                    found = true;
-                                }
-                            }
-                            else if ((index > -1) && (smallestIndex > index)) {
-                                smallestIndex = index;
-                                scheduledHourIndex = i;
-                            }
-                        }
-                    }
-
-                    console.log("\n");
-
-                    if (scheduledHourIndex != undefined) {
-                        await takeReservation(strictedPractiseExams[y].scheduledHours[scheduledHourIndex].practiceExams[0].id, bearer_token);
-                        process.exit();
-                    }
-                }
-            }
-            clearCount++;
-            if (clearCount === 20) {
-                console.clear();
-                clearCount = 0;
-            }
-
-            await sleep(5000);
-        } catch (err) {}
-    }
+    return fetch("https://info-car.pl/api/word/word-centers/exam-schedule", {
+        method: 'PUT',
+        agent: agent,
+        body: JSON.stringify({
+            category: "B",
+            endDate: endDate.toISOString(),
+            startDate: startDate.toISOString(),
+            wordId: process.env.WORDID || "3"
+        }),
+        headers: {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "Accept-Language": "pl-PL",
+            "Authorization": bearerToken,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "DNT": "1",
+            "Host": "info-car.pl",
+            "Origin": "https://info-car.pl",
+            "Referer": "https://info-car.pl/new/prawo-jazdy/zapisz-sie-na-egzamin-na-prawo-jazdy/wybor-terminu",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "same-origin",
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+            "sec-ch-ua": '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"Linux"'
+        }
+    });
 };
 
-// strictedScheduledDates[0]
-// {
-//     day: '2023-09-05',
-//     scheduledHours: [
-//       {
-//         time: '09:00:00',
-//         theoryExams: [Array],
-//         practiceExams: [],
-//         linkedExamsDto: []
-//       },
-//       {
-//         time: '16:00:00',
-//         theoryExams: [Array],
-//         practiceExams: [],
-//         linkedExamsDto: []
-//       },
-//     ]
-//   }
+const findEarliestPracticeExam = (scheduledDays) => {
+    let earliestExam = null;
+    let earliestDate = null;
 
-// strictedScheduledDates[0].scheduledHours[0].practiceExams
-// [
-//     {
-//         id: '2375413172901643039',
-//         places: 1,
-//         date: '2023-10-03T13:00:00',
-//         amount: 200,
-//         additionalInfo: null
-//     }
-// ]
+    for (const day of scheduledDays) {
+        for (const hour of day.scheduledHours) {
+            if (hour.practiceExams && hour.practiceExams.length > 0) {
+                for (const exam of hour.practiceExams) {
+                    const examDate = new Date(exam.date);
+
+                    const dateFrom = new Date(process.env.DATE_FROM);
+                    const dateTo = new Date(process.env.DATE_TO);
+                    
+                    if (examDate >= dateFrom && examDate <= dateTo) {
+                        if (!earliestDate || examDate < earliestDate) {
+                            earliestDate = examDate;
+                            earliestExam = {
+                                ...exam,
+                                day: day.day,
+                                time: hour.time
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return earliestExam;
+};
+
+export const startSearching = async () => {
+    let bearerToken = await getBearerToken();
+    const agent = createAgent();
+
+    while (true) {
+
+        try {
+            console.log("Fetching available exam slots...");
+            const response = await fetchSchedule(bearerToken, agent);
+            const responseText = await response.text();
+
+            if (response.status !== 200) {
+                console.log(`Request failed with status: ${response.status}`);
+                bearerToken = await getBearerToken();
+                continue;
+            }
+
+            let schedule;
+            try {
+                schedule = JSON.parse(responseText);
+            } catch (parseError) {
+                console.log("Failed to parse JSON response - refreshing token...");
+                bearerToken = await getBearerToken();
+                continue;
+            }
+
+            console.log("Schedule data received");
+            const earliestExam = findEarliestPracticeExam(schedule.schedule.scheduledDays);
+
+            if (earliestExam) {
+                console.log(`Found earliest practice exam:`);
+                console.log(`Date: ${earliestExam.day} at ${earliestExam.time}`);
+                console.log(`Available places: ${earliestExam.places}`);
+                console.log(`Amount: ${earliestExam.amount} PLN`);
+                console.log(`Exam ID: ${earliestExam.id}`);
+                
+                const examData = {
+                    found: new Date().toISOString(),
+                    exam: earliestExam
+                };
+                fs.writeFileSync('found-exam.json', JSON.stringify(examData, null, 2));
+                
+                await takeReservation(earliestExam.id, bearerToken);
+                console.log("Reservation completed - exiting");
+                process.exit(0);
+            }
+
+            console.log("No available slots found - checking again in 5 seconds");
+            await new Promise(resolve => setTimeout(resolve, process.env.SLEEP));
+        } catch (error) {
+            console.log(`Error: ${error.message}`);
+            await new Promise(resolve => setTimeout(resolve, process.env.SLEEP));
+        }
+    }
+};

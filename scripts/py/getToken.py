@@ -18,15 +18,17 @@ def login(driver):
     
     try:
         WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "#main-header-menu > div > div.right-panel.ng-tns-c1251938777-2.ng-star-inserted > div.my-account.ng-tns-c1251938777-2 > div > div > button"))
+            EC.presence_of_element_located((By.CSS_SELECTOR, "button[type='submit']"))
         )
-    except:
-        print("Error timeout exception")
+    except Exception as e:
+        print(f"Error timeout exception: {e}")
+        driver.quit()
+        return False
 
 
 def main():
     project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    chromedriver_path = os.path.join(project_dir, "utils", "chromedriver.exe")
+    chromedriver_path = os.path.join(project_dir, "utils", "chromedriver")
 
     url = "https://info-car.pl/oauth2/login"
     options = webdriver.ChromeOptions()
@@ -38,15 +40,19 @@ def main():
     service = ChromeService(executable_path=chromedriver_path)
     driver = webdriver.Chrome(service=service, options=options)
 
-
-    driver.get(url)
-    login(driver)
-
-    searchUrl = "https://info-car.pl/oauth2/userinfo"
-    for request in driver.requests:
-        if request.url == searchUrl:
-            print(request.headers['Authorization'])
-
-    # driver.quit()
+    try:
+        driver.get(url)
+        if login(driver) == False:
+            return
+        
+        searchUrl = "https://info-car.pl/oauth2/userinfo"
+        for request in driver.requests:
+            if request.url == searchUrl:
+                print(request.headers['Authorization'])
+                break
+    except Exception as e:
+        print(f"Error in main: {e}")
+    finally:
+        driver.quit()
 
 main()

@@ -20,4 +20,18 @@ const getToken = async () => {
     });
 }
 
-export default getToken;
+
+export const getBearerToken = async () => {
+    console.log("Getting authorization token...");
+    let bearerToken = "";
+    do {
+        bearerToken = await getToken();
+        if (bearerToken === "") {
+            console.log("Failed to get token, retrying in 3 seconds...");
+            await new Promise(resolve => setTimeout(resolve, process.env.SLEEP));
+        }
+    } while(bearerToken === "");
+    
+    console.log("Your token is: " + bearerToken);
+    return bearerToken;
+};

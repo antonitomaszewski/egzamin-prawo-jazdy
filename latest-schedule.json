@@ -1,0 +1,1862 @@
+[
+  {
+    "day": "2025-07-14",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2551310525704403085",
+            "places": 8,
+            "date": "2025-07-14T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2551310525705603085",
+            "places": 7,
+            "date": "2025-07-14T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "09:40:00",
+        "theoryExams": [
+          {
+            "id": "2551310525706003085",
+            "places": 12,
+            "date": "2025-07-14T09:40:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310525707003085",
+            "places": 9,
+            "date": "2025-07-14T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "11:20:00",
+        "theoryExams": [
+          {
+            "id": "2551310525708003085",
+            "places": 14,
+            "date": "2025-07-14T11:20:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310525708603085",
+            "places": 14,
+            "date": "2025-07-14T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "13:20:00",
+        "theoryExams": [
+          {
+            "id": "2551310525709203085",
+            "places": 17,
+            "date": "2025-07-14T13:20:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2551310525709803085",
+            "places": 10,
+            "date": "2025-07-14T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-07-16",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2551310544804403085",
+            "places": 13,
+            "date": "2025-07-16T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2551310544805603085",
+            "places": 13,
+            "date": "2025-07-16T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310544807003085",
+            "places": 7,
+            "date": "2025-07-16T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310544808603085",
+            "places": 12,
+            "date": "2025-07-16T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2551310544809803085",
+            "places": 14,
+            "date": "2025-07-16T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-07-18",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2551310562104403085",
+            "places": 13,
+            "date": "2025-07-18T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2551310562105603085",
+            "places": 14,
+            "date": "2025-07-18T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310562107003085",
+            "places": 13,
+            "date": "2025-07-18T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310562108603085",
+            "places": 9,
+            "date": "2025-07-18T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2551310562109803085",
+            "places": 13,
+            "date": "2025-07-18T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-07-21",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2551310564904403085",
+            "places": 15,
+            "date": "2025-07-21T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2551310564905603085",
+            "places": 13,
+            "date": "2025-07-21T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310564907003085",
+            "places": 14,
+            "date": "2025-07-21T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310564908603085",
+            "places": 10,
+            "date": "2025-07-21T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2551310564909803085",
+            "places": 15,
+            "date": "2025-07-21T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-07-25",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2551310590704403085",
+            "places": 12,
+            "date": "2025-07-25T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2551310590705603085",
+            "places": 14,
+            "date": "2025-07-25T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310590707003085",
+            "places": 13,
+            "date": "2025-07-25T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310590708603085",
+            "places": 15,
+            "date": "2025-07-25T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-07-28",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2551310594004403085",
+            "places": 15,
+            "date": "2025-07-28T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2551310594005603085",
+            "places": 15,
+            "date": "2025-07-28T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2551310594007003085",
+            "places": 15,
+            "date": "2025-07-28T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2551310594009803085",
+            "places": 14,
+            "date": "2025-07-28T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "15:00:00",
+        "theoryExams": [
+          {
+            "id": "2560614295600003085",
+            "places": 14,
+            "date": "2025-07-28T15:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-07-30",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2551311005104403085",
+            "places": 15,
+            "date": "2025-07-30T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2551311005105603085",
+            "places": 15,
+            "date": "2025-07-30T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "09:40:00",
+        "theoryExams": [
+          {
+            "id": "2551311005106003085",
+            "places": 12,
+            "date": "2025-07-30T09:40:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-04",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814073104403085",
+            "places": 15,
+            "date": "2025-08-04T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814073105603085",
+            "places": 14,
+            "date": "2025-08-04T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814073107003085",
+            "places": 15,
+            "date": "2025-08-04T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814073108603085",
+            "places": 15,
+            "date": "2025-08-04T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-06",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814105004403085",
+            "places": 15,
+            "date": "2025-08-06T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814105005603085",
+            "places": 14,
+            "date": "2025-08-06T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814105007003085",
+            "places": 14,
+            "date": "2025-08-06T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814105008603085",
+            "places": 15,
+            "date": "2025-08-06T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-08",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814123904403085",
+            "places": 15,
+            "date": "2025-08-08T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814123905603085",
+            "places": 15,
+            "date": "2025-08-08T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814123907003085",
+            "places": 15,
+            "date": "2025-08-08T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814123908603085",
+            "places": 15,
+            "date": "2025-08-08T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814123909803085",
+            "places": 15,
+            "date": "2025-08-08T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-11",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814144404403085",
+            "places": 15,
+            "date": "2025-08-11T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814144405603085",
+            "places": 15,
+            "date": "2025-08-11T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814144407003085",
+            "places": 15,
+            "date": "2025-08-11T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814144408603085",
+            "places": 15,
+            "date": "2025-08-11T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814144409803085",
+            "places": 15,
+            "date": "2025-08-11T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-13",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814165204403085",
+            "places": 15,
+            "date": "2025-08-13T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814165205603085",
+            "places": 15,
+            "date": "2025-08-13T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814165207003085",
+            "places": 15,
+            "date": "2025-08-13T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814165208603085",
+            "places": 15,
+            "date": "2025-08-13T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814165209803085",
+            "places": 15,
+            "date": "2025-08-13T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-18",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814191504403085",
+            "places": 15,
+            "date": "2025-08-18T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814191505603085",
+            "places": 15,
+            "date": "2025-08-18T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814191507003085",
+            "places": 15,
+            "date": "2025-08-18T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814191508603085",
+            "places": 15,
+            "date": "2025-08-18T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814191509803085",
+            "places": 15,
+            "date": "2025-08-18T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-20",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814205604403085",
+            "places": 15,
+            "date": "2025-08-20T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814205605603085",
+            "places": 15,
+            "date": "2025-08-20T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814205607003085",
+            "places": 15,
+            "date": "2025-08-20T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814205608603085",
+            "places": 15,
+            "date": "2025-08-20T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814205609803085",
+            "places": 15,
+            "date": "2025-08-20T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-22",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814230904403085",
+            "places": 15,
+            "date": "2025-08-22T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814230905603085",
+            "places": 15,
+            "date": "2025-08-22T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814230907003085",
+            "places": 15,
+            "date": "2025-08-22T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814230908603085",
+            "places": 14,
+            "date": "2025-08-22T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814230909803085",
+            "places": 14,
+            "date": "2025-08-22T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-25",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814234704403085",
+            "places": 15,
+            "date": "2025-08-25T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814234705603085",
+            "places": 15,
+            "date": "2025-08-25T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814234707003085",
+            "places": 15,
+            "date": "2025-08-25T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814234708603085",
+            "places": 15,
+            "date": "2025-08-25T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814234709803085",
+            "places": 15,
+            "date": "2025-08-25T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-27",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814252004403085",
+            "places": 15,
+            "date": "2025-08-27T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814252005603085",
+            "places": 15,
+            "date": "2025-08-27T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814252007003085",
+            "places": 15,
+            "date": "2025-08-27T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814252008603085",
+            "places": 15,
+            "date": "2025-08-27T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814252009803085",
+            "places": 15,
+            "date": "2025-08-27T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-08-29",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2552814271304403085",
+            "places": 15,
+            "date": "2025-08-29T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2552814271305603085",
+            "places": 15,
+            "date": "2025-08-29T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814271307003085",
+            "places": 15,
+            "date": "2025-08-29T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2552814271308603085",
+            "places": 15,
+            "date": "2025-08-29T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2552814271309803085",
+            "places": 15,
+            "date": "2025-08-29T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-09-01",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2561710432504403085",
+            "places": 19,
+            "date": "2025-09-01T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [
+          {
+            "id": "2561710432529403085",
+            "places": 1,
+            "date": "2025-09-01T08:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2561710432506003085",
+            "places": 19,
+            "date": "2025-09-01T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [
+          {
+            "id": "2561710432500003085",
+            "places": 1,
+            "date": "2025-09-01T08:50:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2561710432507403085",
+            "places": 19,
+            "date": "2025-09-01T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2561710432509003085",
+            "places": 19,
+            "date": "2025-09-01T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2561710432510203085",
+            "places": 19,
+            "date": "2025-09-01T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "15:00:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710432503603085",
+            "places": 1,
+            "date": "2025-09-01T15:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-09-02",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453500003085",
+            "places": 1,
+            "date": "2025-09-02T08:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453500603085",
+            "places": 2,
+            "date": "2025-09-02T08:50:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "09:40:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453501203085",
+            "places": 1,
+            "date": "2025-09-02T09:40:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453501803085",
+            "places": 1,
+            "date": "2025-09-02T10:30:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "11:20:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453502403085",
+            "places": 1,
+            "date": "2025-09-02T11:20:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453519803085",
+            "places": 2,
+            "date": "2025-09-02T12:30:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "13:20:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453503003085",
+            "places": 2,
+            "date": "2025-09-02T13:20:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453503603085",
+            "places": 2,
+            "date": "2025-09-02T14:10:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "15:00:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710453504203085",
+            "places": 1,
+            "date": "2025-09-02T15:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-09-03",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [
+          {
+            "id": "2561710462004403085",
+            "places": 19,
+            "date": "2025-09-03T08:00:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [
+          {
+            "id": "2561710462029403085",
+            "places": 2,
+            "date": "2025-09-03T08:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [
+          {
+            "id": "2561710462006003085",
+            "places": 19,
+            "date": "2025-09-03T08:50:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [
+          {
+            "id": "2561710462000003085",
+            "places": 2,
+            "date": "2025-09-03T08:50:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "09:40:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710462000603085",
+            "places": 1,
+            "date": "2025-09-03T09:40:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [
+          {
+            "id": "2561710462007403085",
+            "places": 19,
+            "date": "2025-09-03T10:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [
+          {
+            "id": "2561710462001203085",
+            "places": 1,
+            "date": "2025-09-03T10:30:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "11:20:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710462001803085",
+            "places": 1,
+            "date": "2025-09-03T11:20:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [
+          {
+            "id": "2561710462009003085",
+            "places": 19,
+            "date": "2025-09-03T12:30:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [
+          {
+            "id": "2561710462023803085",
+            "places": 2,
+            "date": "2025-09-03T12:30:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "13:20:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710462002403085",
+            "places": 2,
+            "date": "2025-09-03T13:20:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [
+          {
+            "id": "2561710462010203085",
+            "places": 19,
+            "date": "2025-09-03T14:10:00",
+            "amount": 55,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "practiceExams": [
+          {
+            "id": "2561710462003003085",
+            "places": 2,
+            "date": "2025-09-03T14:10:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "15:00:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710462003603085",
+            "places": 2,
+            "date": "2025-09-03T15:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      }
+    ]
+  },
+  {
+    "day": "2025-09-04",
+    "scheduledHours": [
+      {
+        "time": "08:00:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465200003085",
+            "places": 2,
+            "date": "2025-09-04T08:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "08:50:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465200603085",
+            "places": 2,
+            "date": "2025-09-04T08:50:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "09:40:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465201203085",
+            "places": 2,
+            "date": "2025-09-04T09:40:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "10:30:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465201803085",
+            "places": 2,
+            "date": "2025-09-04T10:30:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "11:20:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465202403085",
+            "places": 2,
+            "date": "2025-09-04T11:20:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "12:30:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465219803085",
+            "places": 2,
+            "date": "2025-09-04T12:30:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "13:20:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465203003085",
+            "places": 2,
+            "date": "2025-09-04T13:20:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "14:10:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465203603085",
+            "places": 2,
+            "date": "2025-09-04T14:10:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      },
+      {
+        "time": "15:00:00",
+        "theoryExams": [],
+        "practiceExams": [
+          {
+            "id": "2561710465204203085",
+            "places": 2,
+            "date": "2025-09-04T15:00:00",
+            "amount": 222,
+            "additionalInfo": "W-W"
+          }
+        ],
+        "linkedExamsDto": []
+      }
+    ]
+  }
+]
