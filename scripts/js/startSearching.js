@@ -1,69 +1,7 @@
-import fetch from "node-fetch";
-import { getBearerToken } from './getToken.js';
 import { getValidToken } from './tokenManager.js';
 import { takeAnyReservation } from './takeReservation.js';
 import { getAllPracticeExams, saveExamsToFile } from './examUtils.js';
-// import { createAgent, fetchSchedule, handleResponse } from './apiService.js';
-import https from 'https';
-import {constants} from 'crypto';
-
-const createAgent = () => new https.Agent({
-    rejectUnauthorized: false,
-    secureOptions: constants.SSL_OP_ALLOW_BEAST,
-    ciphers: 'DEFAULT:!DH',
-});
-
-const fetchSchedule = async (bearerToken, agent) => {
-    const startDate = new Date(process.env.DATE_FROM);
-    const endDate = new Date(process.env.DATE_TO);
-
-    return fetch("https://info-car.pl/api/word/word-centers/exam-schedule", {
-        method: 'PUT',
-        agent: agent,
-        body: JSON.stringify({
-            category: "B",
-            endDate: endDate.toISOString(),
-            startDate: startDate.toISOString(),
-            wordId: process.env.WORDID || "3"
-        }),
-        headers: {
-            "Accept": "application/json, text/plain, */*",
-            "Accept-Encoding": "gzip, deflate, br, zstd",
-            "Accept-Language": "pl-PL",
-            "Authorization": bearerToken,
-            "Connection": "keep-alive",
-            "Content-Type": "application/json",
-            "DNT": "1",
-            "Host": "info-car.pl",
-            "Origin": "https://info-car.pl",
-            "Referer": "https://info-car.pl/new/prawo-jazdy/zapisz-sie-na-egzamin-na-prawo-jazdy/wybor-terminu",
-            "Sec-Fetch-Dest": "empty",
-            "Sec-Fetch-Mode": "cors",
-            "Sec-Fetch-Site": "same-origin",
-            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
-            "sec-ch-ua": '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
-            "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-platform": '"Linux"'
-        }
-    });
-};
-
-
-const handleResponse = async (response) => {
-    if (response.status !== 200) {
-        console.log(`Request failed with status: ${response.status}`);
-        return null;
-    }
-
-    const responseText = await response.text();
-    
-    try {
-        return JSON.parse(responseText);
-    } catch (parseError) {
-        console.log("Failed to parse JSON response");
-        return null;
-    }
-};
+import { createAgent, fetchSchedule, handleResponse } from './apiService.js';
 
 const processSchedule = async (schedule, bearerToken) => {
     console.log("Schedule data received");
@@ -74,8 +12,13 @@ const processSchedule = async (schedule, bearerToken) => {
     // await takeAnyReservation(exams, bearerToken);
 };
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
+// Ulepszona funkcja sleep z losowością
+const sleep = (baseMs) => {
+    const randomness = Math.random() * 1000; // 0-1000ms losowości
+    const totalMs = baseMs + randomness;
+    console.log(`Sleeping for ${Math.round(totalMs)}ms`);
+    return new Promise(resolve => setTimeout(resolve, totalMs));
+};
 
 export const startSearching = async () => {
     let bearerToken = await getValidToken();
@@ -89,8 +32,21 @@ export const startSearching = async () => {
 
             if (response.status === 401) {
                 console.log("Token invalid (401), forcing refresh...");
-                bearerToken = await getValidToken(true); // force = true
-
+                const responseText = await response.text();
+                
+                // Sprawdź czy to WAF czy expired token
+                if (responseText.includes("Request Rejected") || 
+                    responseText.includes("Access Denied") ||
+                    responseText.includes("blocked")) {
+                    
+                    console.log("⚠️ WAF blocking detected - waiting 30 seconds...");
+                    await sleep(30000); // 30 sekund
+                    // NIE generuj nowego tokenu!
+                    
+                } else {
+                    console.log("Token expired - getting new one...");
+                    bearerToken = await getValidToken(true);
+                }
                     // Sprawdź czy to rate limiting czy expired token
                 const rateLimitHeaders = [
                     'X-RateLimit-Remaining',
@@ -110,6 +66,7 @@ export const startSearching = async () => {
                 console.log("429 Too Many Requests - definite rate limiting");
                 const retryAfter = response.headers.get('Retry-After');
                 console.log(`Retry after: ${retryAfter} seconds`);
+                await sleep(parseInt(retryAfter) * 1000 || 60000);
             }
 
             const schedule = await handleResponse(response);
