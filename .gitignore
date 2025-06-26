@@ -1,3 +1,13 @@
 /node_modules
 /venv
 .env
+
+# Token cache files
+cached_token.txt
+cached_token*.txt
+token_cache.txt
+*.token
+
+# Generated data files
+all-exams.json
+found-exam.json

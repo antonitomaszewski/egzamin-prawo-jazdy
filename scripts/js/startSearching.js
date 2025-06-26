@@ -1,9 +1,11 @@
 import fetch from "node-fetch";
 import { getBearerToken } from './getToken.js';
-import { takeReservation } from './takeReservation.js';
+import { getValidToken } from './tokenManager.js';
+import { takeAnyReservation } from './takeReservation.js';
+import { getAllPracticeExams, saveExamsToFile } from './examUtils.js';
+// import { createAgent, fetchSchedule, handleResponse } from './apiService.js';
 import https from 'https';
 import {constants} from 'crypto';
-import fs from 'fs';
 
 const createAgent = () => new https.Agent({
     rejectUnauthorized: false,
@@ -46,39 +48,37 @@ const fetchSchedule = async (bearerToken, agent) => {
     });
 };
 
-const findEarliestPracticeExam = (scheduledDays) => {
-    let earliestExam = null;
-    let earliestDate = null;
 
-    for (const day of scheduledDays) {
-        for (const hour of day.scheduledHours) {
-            if (hour.practiceExams && hour.practiceExams.length > 0) {
-                for (const exam of hour.practiceExams) {
-                    const examDate = new Date(exam.date);
-
-                    const dateFrom = new Date(process.env.DATE_FROM);
-                    const dateTo = new Date(process.env.DATE_TO);
-                    
-                    if (examDate >= dateFrom && examDate <= dateTo) {
-                        if (!earliestDate || examDate < earliestDate) {
-                            earliestDate = examDate;
-                            earliestExam = {
-                                ...exam,
-                                day: day.day,
-                                time: hour.time
-                            };
-                        }
-                    }
-                }
-            }
-        }
+const handleResponse = async (response) => {
+    if (response.status !== 200) {
+        console.log(`Request failed with status: ${response.status}`);
+        return null;
     }
 
-    return earliestExam;
+    const responseText = await response.text();
+    
+    try {
+        return JSON.parse(responseText);
+    } catch (parseError) {
+        console.log("Failed to parse JSON response");
+        return null;
+    }
 };
 
+const processSchedule = async (schedule, bearerToken) => {
+    console.log("Schedule data received");
+    const exams = getAllPracticeExams(schedule.schedule.scheduledDays);
+
+    saveExamsToFile(exams);
+    // process.exit(0)
+    // await takeAnyReservation(exams, bearerToken);
+};
+
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+
 export const startSearching = async () => {
-    let bearerToken = await getBearerToken();
+    let bearerToken = await getValidToken();
     const agent = createAgent();
 
     while (true) {
@@ -86,49 +86,46 @@ export const startSearching = async () => {
         try {
             console.log("Fetching available exam slots...");
             const response = await fetchSchedule(bearerToken, agent);
-            const responseText = await response.text();
 
-            if (response.status !== 200) {
-                console.log(`Request failed with status: ${response.status}`);
-                bearerToken = await getBearerToken();
+            if (response.status === 401) {
+                console.log("Token invalid (401), forcing refresh...");
+                bearerToken = await getValidToken(true); // force = true
+
+                    // Sprawdź czy to rate limiting czy expired token
+                const rateLimitHeaders = [
+                    'X-RateLimit-Remaining',
+                    'X-RateLimit-Reset', 
+                    'Retry-After'
+                ];
+                
+                for (const header of rateLimitHeaders) {
+                    if (response.headers.get(header)) {
+                        console.log(`Rate limit header ${header}: ${response.headers.get(header)}`);
+                    }
+                }
                 continue;
             }
 
-            let schedule;
-            try {
-                schedule = JSON.parse(responseText);
-            } catch (parseError) {
-                console.log("Failed to parse JSON response - refreshing token...");
-                bearerToken = await getBearerToken();
+            if (response.status === 429) {
+                console.log("429 Too Many Requests - definite rate limiting");
+                const retryAfter = response.headers.get('Retry-After');
+                console.log(`Retry after: ${retryAfter} seconds`);
+            }
+
+            const schedule = await handleResponse(response);
+            if (!schedule) {
+                bearerToken = await getValidToken();
                 continue;
             }
 
-            console.log("Schedule data received");
-            const earliestExam = findEarliestPracticeExam(schedule.schedule.scheduledDays);
-
-            if (earliestExam) {
-                console.log(`Found earliest practice exam:`);
-                console.log(`Date: ${earliestExam.day} at ${earliestExam.time}`);
-                console.log(`Available places: ${earliestExam.places}`);
-                console.log(`Amount: ${earliestExam.amount} PLN`);
-                console.log(`Exam ID: ${earliestExam.id}`);
-                
-                const examData = {
-                    found: new Date().toISOString(),
-                    exam: earliestExam
-                };
-                fs.writeFileSync('found-exam.json', JSON.stringify(examData, null, 2));
-                
-                await takeReservation(earliestExam.id, bearerToken);
-                console.log("Reservation completed - exiting");
-                process.exit(0);
-            }
+            await processSchedule(schedule, bearerToken);
 
             console.log("No available slots found - checking again in 5 seconds");
-            await new Promise(resolve => setTimeout(resolve, process.env.SLEEP));
+            await sleep(process.env.SLEEP);
+            
         } catch (error) {
             console.log(`Error: ${error.message}`);
-            await new Promise(resolve => setTimeout(resolve, process.env.SLEEP));
+            await sleep(process.env.SLEEP);
         }
     }
 };
