@@ -53,9 +53,11 @@ const getAllPracticeExams = (scheduledDays) => {
                         console.log(`Exam: ${exam.id}, date: ${exam.date}, in range: ${examDate >= dateFrom && examDate <= dateTo}`);
                         // allExams.push(exam.id);
                         allExams.push({
-                            id: exam.id,
+                            ...exam,
+                            // id: exam.id,
                             day: day.day,
-                            time: hour.time
+                            time: hour.time,
+                            // date: exam.date
                         });
                     }
                 }
