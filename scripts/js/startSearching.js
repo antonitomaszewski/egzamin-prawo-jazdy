@@ -2,6 +2,7 @@ import { getValidToken } from './tokenManager.js';
 import { takeAnyReservation } from './takeReservation.js';
 import { getAllPracticeExams, saveExamsToFile } from './examUtils.js';
 import { createAgent, fetchSchedule, handleResponse } from './apiService.js';
+import { sleep } from './utils.js';
 
 const processSchedule = async (schedule, bearerToken) => {
     console.log("Schedule data received");
@@ -10,14 +11,6 @@ const processSchedule = async (schedule, bearerToken) => {
     saveExamsToFile(exams);
     // process.exit(0)
     // await takeAnyReservation(exams, bearerToken);
-};
-
-// Ulepszona funkcja sleep z losowością
-const sleep = (baseMs) => {
-    const randomness = Math.random() * 1000; // 0-1000ms losowości
-    const totalMs = parseInt(baseMs) + randomness;
-    console.log(`Sleeping for ${Math.round(totalMs)}ms`);
-    return new Promise(resolve => setTimeout(resolve, totalMs));
 };
 
 export const startSearching = async () => {

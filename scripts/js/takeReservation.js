@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { sleep } from './utils.js';
 
 const takeReservation = async (practiceId, token) => {
     const response = await fetch(`https://info-car.pl/api/word/reservations`, {
@@ -29,16 +30,22 @@ const takeReservation = async (practiceId, token) => {
             "Authorization": token
         }
     });
+
+    console.log(`Reservation response status: ${response.status}`);
 };
 
 const takeAnyReservation = async (exams, token) => {
     for (const exam of exams) {
-        console.log(`Trying: ${exam.day} at ${exam.time}`);
+        console.log(`Trying: ${exam.day} at ${exam.time} (ID: ${exam.id})`);
         await takeReservation(exam.id, token);
         // mamy w exams poprostu same ID
         // console.log(`Trying: ${exam}`);
         // await takeReservation(exam, token);
         // await new Promise(resolve => setTimeout(resolve, 500));
+        if (exams.indexOf(exam) < exams.length - 1) {
+            console.log("Waiting 1s before next attempt...");
+            await sleep(500); // 1 sekunda + losowość
+        }
     }
 };
 
