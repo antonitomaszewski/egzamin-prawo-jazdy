@@ -63,7 +63,7 @@ const getAllPracticeExams = (scheduledDays) => {
         }
     }
 
-    console.log(`Total exams found: ${allExams}`);
+    console.log(`Total exams found: ${allExams.length}`);
     return allExams.sort((a, b) => new Date(a.date) - new Date(b.date));
     return allExams
 };
