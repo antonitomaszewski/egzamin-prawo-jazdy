@@ -11,3 +11,7 @@ token_cache.txt
 # Generated data files
 all-exams.json
 found-exam.json
+
+# Log files
+app.log
+*.log

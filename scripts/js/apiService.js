@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 import https from 'https';
 import {constants} from 'crypto';
+import { logError, logWarn } from './utils.js';
 
 const createAgent = () => new https.Agent({
     rejectUnauthorized: false,
@@ -45,7 +46,7 @@ const fetchSchedule = async (bearerToken, agent) => {
 
 const handleResponse = async (response) => {
     if (response.status !== 200) {
-        console.log(`Request failed with status: ${response.status}`);
+        logWarn(`Request failed with status: ${response.status}`);
         return null;
     }
 
@@ -54,7 +55,7 @@ const handleResponse = async (response) => {
     try {
         return JSON.parse(responseText);
     } catch (parseError) {
-        console.log("Failed to parse JSON response");
+        logError("Failed to parse JSON response");
         return null;
     }
 };

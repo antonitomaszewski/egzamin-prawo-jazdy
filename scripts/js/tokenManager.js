@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { getBearerToken } from './getToken.js';
+import { sleep, logInfo, logError, logWarn } from './utils.js';
 
 const TOKEN_FILE = 'cached_token.txt';
 
@@ -7,7 +8,7 @@ const saveToken = (token) => {
     try {
         fs.writeFileSync(TOKEN_FILE, token);
     } catch (error) {
-        console.log('Failed to save token to file');
+        logError('Failed to save token to file');
     }
 };
 
@@ -17,7 +18,7 @@ const loadToken = () => {
             return fs.readFileSync(TOKEN_FILE, 'utf8').trim();
         }
     } catch (error) {
-        console.log('Failed to load token from file');
+        logError('Failed to load token from file');
     }
     return null;
 };
@@ -33,9 +34,9 @@ const isTokenValid = (token) => {
         const exp = payload.exp * 1000; // Convert to milliseconds
         const now = Date.now();
 
-        // console.log('Token expires at:', new Date(exp).toISOString());
-        // console.log('Current time:', new Date(now).toISOString());
-        // console.log('Time left:', Math.round((exp - now) / 1000), 'seconds');
+        // logInfo('Token expires at:', new Date(exp).toISOString());
+        // logInfo('Current time:', new Date(now).toISOString());
+        // logInfo('Time left:', Math.round((exp - now) / 1000), 'seconds');
         
         
         return exp > now;
@@ -48,11 +49,11 @@ const getValidToken = async (force = false) => {
     let token = loadToken();
     
     if (!force && isTokenValid(token)) {
-        console.log('Using cached token');
+        logInfo('Using cached token');
         return token;
     }
     
-    console.log('Getting new token');
+    logInfo('Getting new token');
     token = await getBearerToken();
     saveToken(token);
     return token;

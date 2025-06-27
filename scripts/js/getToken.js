@@ -1,15 +1,16 @@
-import { exec } from 'child_process'
+import { exec } from 'child_process';
+import { logInfo, logError } from './utils.js';
 
 const getToken = async () => {
     return new Promise(resolve => {
         const pythonCommand = `python ./scripts/py/getToken.py`;
         exec(pythonCommand, (error, stdout, stderr) => {
             if (error) {
-                console.error(`Error executing Python script: ${error.message}`);
+                logError(`Error executing Python script: ${error.message}`);
                 return;
             }
             if (stderr) {
-                console.error(`Python script stderr: ${stderr}`);
+                logError(`Python script stderr: ${stderr}`);
                 return;
             }
         
@@ -22,16 +23,16 @@ const getToken = async () => {
 
 
 export const getBearerToken = async () => {
-    console.log("Getting authorization token...");
+    logInfo("Getting authorization token...");
     let bearerToken = "";
     do {
         bearerToken = await getToken();
         if (bearerToken === "") {
-            console.log("Failed to get token, retrying in 3 seconds...");
+            logInfo("Failed to get token, retrying in 3 seconds...");
             await new Promise(resolve => setTimeout(resolve, process.env.SLEEP));
         }
     } while(bearerToken === "");
     
-    console.log("Your token is: " + bearerToken);
+    logInfo("Your token is: " + bearerToken);
     return bearerToken;
 };
